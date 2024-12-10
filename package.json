@@ -1,0 +1,11 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo 'Testing the Node.js app'",
+    "build": "echo 'Building the Node.js app'"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
