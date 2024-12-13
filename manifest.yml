@@ -1,0 +1,31 @@
+apiversion: v1
+kind: pod
+metadata: 
+  name: nodjs-pod
+  labels:
+    app: bond
+
+spec: 
+  containers: 
+    - name: nodjs.app
+      image: njl010docker/NodeApp:latest
+      ports: 
+    - containerPort: 4000
+
+---
+
+apiversion: v1
+kind: service
+metada: 
+  name: nodjs-svc
+
+spec: 
+  type: NodePort
+  selector: 
+    app: bond
+
+  ports: 
+    protocol: TCP
+    port: 4000
+    targetPort: 4000
+    nodePort: 30301
