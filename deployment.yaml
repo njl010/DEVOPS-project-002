@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: project2-container
-        image: 533267428631.dkr.ecr.<your-region>.amazonaws.com/project002:tag
+        image: njl010docker/app-op
         ports:
         - containerPort: 4000
 
