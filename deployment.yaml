@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+      - name: project2-container
+        image: 533267428631.dkr.ecr.<your-region>.amazonaws.com/project002:tag
+        ports:
+        - containerPort: 4000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: project2-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: your-app
+  ports:
+  - protocol: TCP
+    port: 4000
+    targetPort: 4000
