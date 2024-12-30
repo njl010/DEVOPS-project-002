@@ -15,7 +15,7 @@ spec:
         app: nodjs-pod
     spec: 
       containers:
-        - name: nodjs.app
+        - name: nodjs-app
           image: njl010docker/app-op:latest
           ports:
             - containerPort: 3000
