@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodjs-pod
+  namespace: default
+spec:
+  type: NodePort  # Corrected case for NodePort
+  selector:
+    app: nodjs-pod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30300
+
