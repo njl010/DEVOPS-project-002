@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodjs-pod
+  labels:
+    app: nodjs-pod
+
+spec:
+  selector:
+    matchLabels:
+      app: nodjs-pod
+  template:
+    metadata:
+      labels:
+        app: nodjs-pod
+    spec: 
+      containers:
+        - name: nodjs.app
+          image: njl010docker/app-op:latest
+          ports:
+            - containerPort: 3000
+
